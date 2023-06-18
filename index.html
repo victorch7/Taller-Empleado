@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
+    <title>Empleados</title>
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/style.css">
+</head>
+
+<!--Encabezado - barra de navegación-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Inicio</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="opcion1.html">Opción 1</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              <a href="opcion2.html">Opción 2</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </nav>
+</header>
+
+<body>
+  <!--Container para datos personales-->
+<div class="container align-items:center p-2">
+        <h1 class="text-center bg-success-subtle" >Sistema Empleados</h1>
+    <div class="row">
+      <div class=" card col-md-8">
+      <form class="">
+        <h3>Datos Personales</h3>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="input-nombres" class="form-control" /><!--Input para nombres-->
+            <label class="form-label" for="input-nombres">Nombres</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="input-apellidos" class="form-control" /><!--Input para apellidos-->
+            <label class="form-label" for="input-apellidos">Apellidos</label>
+          </div>
+        </div>
+      </div>
+
+
+    <label class="form-label" for="form6Example3">Sexo</label>
+      <!--Container para los radio buton del sexo-->
+    <div class="form-outline mb-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-femenino"/> <!--id radio button femenino-->
+          <label class="form-check-label" for="rad-femenino"> Femenino </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-maculino"/> <!--id radio button masculino-->
+          <label class="form-check-label" for="rad-maculino"> Masculino </label>
+        </div>
+      </div>
+
+     <!--Container para las fechas-->
+      <div class="form-outline mb-4">
+        <input type="date" id="fecha-nacimiento" class="form-control" />  <!--id input fecha de nacimiento-->
+        <label class="form-label" for="fecha-nacimiento">Fecha de nacimiento</label>
+      </div>
+
+        <div class="form-outline mb-4">
+        <input type="date" id="fecha-ingreso" class="form-control" /> <!--id input fecha de ingreso-->
+        <label class="form-label" for="fecha-ingreso">Fecha de ingreso</label>
+      </div>
+    </form>
+    <!--container del salario-->
+    <form>
+      <div class="form-outline mb-4">
+        <input type="number" id="salario" class="form-control"/><!-- Input del salario -->
+        <label class="form-label" for="salario">Salario</label>
+      </div>
+
+      <!-- Boton de modificar los campos -->
+      <button id="btn-modificar" type="submit" class="btn btn-dark btn-block mb-4">Modificar</button>
+    </form>
+
+    <!--Foto de perfil-->
+    </div>
+      <br> <br>
+      <div class="card col-md-4 gx-3 px-12" id="foto">
+        <div class="bg-image hover-overlay ripple">
+      <img src="images/perfil.jpg" class="img-fluid" style="width: 500px; height: 500px;" />
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(57, 192, 237, 0.2);"></div>
+      </a>
+    </div>
+      </div>
+    </div>
+
+    <!--Container para campos de calculos-->
+    <div class="card mt-4 p-4">
+        <div class="container align-items-center">
+          <div class="row">
+            <div class="col-md-8">
+              <input type="number" id="input-edad" class="form-control"/> <!--id input de la edad-->
+              <label class="form-label" for="input-edad">Edad</label> <br>
+            </div>
+
+            <div class="col-md-4"> <!--Boton calculo edad-->
+              <button id="btn-edad" type="button" class="btn btn-dark" style="width: 250px;">Calcular edad</button>
+            </div>
+
+            <div class="col-md-8">
+              <input type="number" id="input-antiguedad" class="form-control" /> <!--id input de la antiguedad-->
+              <label class="form-label" for="input-antiguedad">Antiguedad</label> <br>
+            </div>
+
+            <div class="col-md-4"> <!--Boton calculo antiguedad-->
+              <button id="btn-antiguedad" type="button" class="btn btn-dark" style="width: 250px;">Calcular antiguedad</button>
+            </div>
+
+            <div class="col-md-8">
+              <input type="number" id="input-prestaciones" class="form-control"/> <!--id input de las prestaciones-->
+              <label class="form-label" for="input-prestaciones">Prestaciones</label>
+            </div>
+            <div class="col-md-4"> <!--Boton calculo prestaciones-->
+              <button id="btn-prestaciones" type="button" class="btn btn-dark" style="width: 250px;">Calcular prestaciones</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+    <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
