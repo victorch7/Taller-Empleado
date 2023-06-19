@@ -1,0 +1,41 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif; /*Fuente*/
+    background: rgb(142, 154, 175);
+    margin-bottom: 25px;
+}
+
+.navegacion{ /*Propiedades estilo barra de navegacion*/
+    background: rgb(42, 44, 65);
+    width: 100%;
+    font-size: 22px;
+    color: #dfe0e2;
+    padding: 20px 0 5px 0;
+    margin-bottom: 25px;
+}
+
+.navegacion a{ /*Estilo items de navegacion*/
+    display: contents;
+    color: #dfe0e2;
+}
+
+h1{ /*Diseño titulo de la barra de navegacion*/
+    padding: 0 25px;
+    color:#a6acb9;
+}
+
+#cont-calculos{
+    position: relative;
+    background: rgb(166, 172, 185);
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+
+.btn-dark{ /*Estilo de bortones*/
+    width:200px;
+    height: 45px;
+    background: rgb(42, 44, 65);
+}
