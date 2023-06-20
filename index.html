@@ -62,11 +62,11 @@
         <!--Container para los radio buton del sexo-->
       <div class="form-outline mb-4">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-femenino"/> <!--id radio button femenino-->
+            <input class="form-check-input" type="radio" name="radio-sexo" id="rad-femenino" value="Femenino"/> <!--id radio button femenino-->
             <label class="form-check-label" for="rad-femenino"> Femenino </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-maculino"/> <!--id radio button masculino-->
+            <input class="form-check-input" type="radio" name="radio-sexo" id="rad-maculino" value="Masculino"/> <!--id radio button masculino-->
             <label class="form-check-label" for="rad-maculino"> Masculino </label>
           </div>
         </div>
@@ -95,7 +95,6 @@
 
       <!--Foto de perfil-->
       </div>
-        <br> <br>
         <div class="card col-md-4 gx-3 px-12" id="foto">
           <div class="bg-image hover-overlay ripple">
         <img src="images/perfil.jpg" class="img-fluid" style="width: 500px; height: 500px;" />
@@ -124,7 +123,7 @@
               </div>
 
               <div class="col-md-6"> <!--Boton calculo antiguedad-->
-                <button id="btn-antiguedad" type="button" class="btn btn-dark">Calcular antigüedad</button>
+                <button id="btn-antiguedad" type="button" class="btn btn-dark" onclick="calcularBotonAntiguedad()">Calcular antigüedad</button>
               </div>
 
               <div class="col-md-6">
@@ -132,10 +131,10 @@
                 <label class="form-label" for="input-prestaciones">Prestaciones</label>
               </div>
               <div class="col-md-6"> <!--Boton calculo prestaciones-->
-                <button id="btn-prestaciones" type="button" class="btn btn-dark">Calcular prestaciones</button>
+                <button id="btn-prestaciones" type="button" class="btn btn-dark" onclick="calcularBotonPrestaciones()">Calcular prestaciones</button>
               </div>
             </div>
-  </div>
+    </div>
       <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
       <script src="bootstrap-5.3.0-alpha3-dist/js/Empleado.js"></script>
 <main/>
