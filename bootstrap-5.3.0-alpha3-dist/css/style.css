@@ -1,7 +1,7 @@
-body{
+body{ /*Estilo general*/
     font-family: 'Oswald', sans-serif;
     font-family: 'Roboto Condensed', sans-serif; /*Fuente*/
-    background: rgb(142, 154, 175);
+    background: rgb(70, 73, 88);
     margin-bottom: 25px;
 }
 
@@ -24,18 +24,58 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     color:#a6acb9;
 }
 
-#cont-calculos{
-    position: relative;
-    background: rgb(166, 172, 185);
-    padding: 5px;
-    margin-top: 20px;
-    border-radius: 8px;
+.container{ /*contenedor general*/
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
+/*contenedor del formulario*/
+.contenedor-form{
+    background: rgb(142, 154, 175);
+    border-radius: 10px;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 960px;
+}
+
+.contenedor-foto{ /*Contenedor de la foto*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(70, 73, 88);
+    border-radius: 6px;
+    padding: 5px;
+    width: 360px;
+    height: 440px;
+}
+
+#foto-perfil{ /*Tamaño foto de perfil*/
+    width: 330px;
+    height: 410px;
+    border-radius: 6px;
+}
+
+.cont-calculos{ /*Campos de los calculos*/
+    background: rgb(166, 172, 185);
+    padding-top: 20px;
+    padding-left: 75px;
+    padding-right: 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 960px;
+}
+
+.form-outline, .form-control{ /*Tamaño de los inputs*/
+    width: 350px;
+    padding-right: 0;
+}
 
 .btn-dark{ /*Estilo de bortones*/
-    width:200px;
-    height: 45px;
+    width: 350px;
+    height: 38px;
     background: rgb(42, 44, 65);
+    text-align: center;
 }

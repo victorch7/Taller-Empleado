@@ -35,107 +35,104 @@
     </nav>
 </header>
 
-<main style="background:rgb(142, 154, 175)">
-    <!--Container para datos personales-->
-  <div class="container align-items:center">
-      <div class="row">
-        <div class=" card col-md-8">
-        <form class="">
-          <h3>Datos Personales</h3>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="input-nombres" class="form-control" /><!--Input para nombres-->
-              <label class="form-label" for="input-nombres">Nombres</label>
-            </div>
+<main>
+  <!--Container para datos personales-->
+  <div class="container">
+    <div class="contenedor-form">
+    <form>
+          <div class="row">
+            <h2 class="text-center">Datos Personales</h2> <br><br> <br>
+                <div class="col-md-7">
+                      <div class="form-outline mb-2">
+                        <input type="text" pattern="[A-Za-z]+" id="input-nombres" class="form-control "/><!--Input para nombres-->
+                        <label class="form-label" for="input-nombres">Nombres</label>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <input type="text" id="input-apellidos" class="form-control" required/><!--Input para apellidos-->
+                        <label class="form-label" for="input-apellidos">Apellidos</label>
+                      </div>
+
+                    <label class="form-label" for="form6Example3">Sexo: </label>
+                    <!--Container para los radio buton del sexo-->
+                    <div class="form-outline mb-2">
+                      <div class="form-check-inline mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-femenino"/> <!--id radio button femenino-->
+                        <label class="form-check-label" for="rad-femenino"> Femenino </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-maculino"/> <!--id radio button masculino-->
+                        <label class="form-check-label" for="rad-maculino"> Masculino </label>
+                      </div>
+                  </div>
+
+                  <!--Container para las fechas-->
+                    <div class="form-outline mb-2">
+                      <input type="date" id="fecha-nacimiento" class="form-control" required />  <!--id input fecha de nacimiento-->
+                      <label class="form-label" for="fecha-nacimiento">Fecha de nacimiento</label>
+                    </div>
+
+                      <div class="form-outline mb-3">
+                      <input type="date" id="fecha-ingreso" class="form-control" required /> <!--id input fecha de ingreso-->
+                      <label class="form-label" for="fecha-ingreso">Fecha de ingreso</label>
+                    </div>
+
+                  <!--container del salario-->
+                    <div class="form-outline mb-4">
+                      <input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="salario" class="form-control"/><!-- Input del salario -->
+                      <label class="form-label" for="salario">Salario</label>
+                    </div>
+
+                    <!-- Boton de modificar los campos -->
+                    <div>
+                      <button type="button" class="btn btn-dark btn-block mb-3" onclick="modificar()">Modificar</button>
+                    </div>
+              </div>
+              <!--Foto de perfil-->
+              <div class="col-md-2">
+                <div class="contenedor-foto">
+                  <img src="images/perfil.jpg" id="foto-perfil" alt="Foto de perfil">
+                </div>
+              </div>
+
+ 
           </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="input-apellidos" class="form-control" /><!--Input para apellidos-->
-              <label class="form-label" for="input-apellidos">Apellidos</label>
-            </div>
-          </div>
-        </div>
-
-
-      <label class="form-label" for="form6Example3">Sexo</label>
-        <!--Container para los radio buton del sexo-->
-      <div class="form-outline mb-4">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-femenino"/> <!--id radio button femenino-->
-            <label class="form-check-label" for="rad-femenino"> Femenino </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad-maculino"/> <!--id radio button masculino-->
-            <label class="form-check-label" for="rad-maculino"> Masculino </label>
-          </div>
-        </div>
-
-      <!--Container para las fechas-->
-        <div class="form-outline mb-4">
-          <input type="date" id="fecha-nacimiento" class="form-control" />  <!--id input fecha de nacimiento-->
-          <label class="form-label" for="fecha-nacimiento">Fecha de nacimiento</label>
-        </div>
-
-          <div class="form-outline mb-4">
-          <input type="date" id="fecha-ingreso" class="form-control" /> <!--id input fecha de ingreso-->
-          <label class="form-label" for="fecha-ingreso">Fecha de ingreso</label>
-        </div>
-      </form>
-      <!--container del salario-->
-      <form class="align-content-center">
-        <div class="form-outline mb-4">
-          <input type="number" id="salario" class="form-control"/><!-- Input del salario -->
-          <label class="form-label" for="salario">Salario</label>
-        </div>
-
-        <!-- Boton de modificar los campos -->
-        <button id="btn-modificar" type="button" class="btn btn-dark btn-block mb-4" onclick="modificar()">Modificar</button>
-      </form>
-
-      <!--Foto de perfil-->
+         </form> 
       </div>
-        <br> <br>
-        <div class="card col-md-4 gx-3 px-12" id="foto">
-          <div class="bg-image hover-overlay ripple">
-        <img src="images/perfil.jpg" class="img-fluid" style="width: 500px; height: 500px;" />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(57, 192, 237, 0.2);"></div>
-        </a>
-      </div>
-        </div>
-      </div>
-
-      <!--Container para campos de calculos-->
-      <div class="container align-items-center" id="cont-calculos">
-            <div class="row">
-              <div class="col-md-6">
-                <input type="number" id="input-edad" class="form-control"/> <!--id input de la edad-->
-                <label class="form-label" for="input-edad">Edad</label> <br>
-              </div>
-
-              <div class="col-md-6"> <!--Boton calculo edad-->
-                <button id="btn-edad" type="button" class="btn btn-dark" onclick="calcularBotonEdad()">Calcular edad</button>
-              </div>
-
-              <div class="col-md-6">
-                <input type="number" id="input-antiguedad" class="form-control" /> <!--id input de la antiguedad-->
-                <label class="form-label" for="input-antiguedad">Antigüedad</label> <br>
-              </div>
-
-              <div class="col-md-6"> <!--Boton calculo antiguedad-->
-                <button id="btn-antiguedad" type="button" class="btn btn-dark">Calcular antigüedad</button>
-              </div>
-
-              <div class="col-md-6">
-                <input type="number" id="input-prestaciones" class="form-control"/> <!--id input de las prestaciones-->
-                <label class="form-label" for="input-prestaciones">Prestaciones</label>
-              </div>
-              <div class="col-md-6"> <!--Boton calculo prestaciones-->
-                <button id="btn-prestaciones" type="button" class="btn btn-dark">Calcular prestaciones</button>
-              </div>
-            </div>
   </div>
+      
+      <!--Container para campos de calculos-->
+      <div class="container">
+        <div class="cont-calculos">
+          <div class="row">
+            <h3 class="justify-content-center"> Cálculos </h3> <br><br>
+            <div class="col-md-6">
+              <input type="input" id="input-edad" class="form-control" disabled/> <!--id input de la edad-->
+              <label class="form-label" for="input-edad">Edad</label> <br>
+            </div>
+
+            <div class="col-md-2"> <!--Boton calculo edad-->
+              <button id="btn-edad" type="button" class="btn btn-dark" onclick="calcularBotonEdad()">Calcular edad</button>
+            </div>
+
+            <div class="col-md-6">
+              <input type="input" id="input-antiguedad" class="form-control" disabled /> <!--id input de la antiguedad-->
+              <label class="form-label" for="input-antiguedad">Antigüedad</label> <br>
+            </div>
+
+            <div class="col-md-2"> <!--Boton calculo antiguedad-->
+              <button id="btn-antiguedad" type="button" class="btn btn-dark">Calcular antigüedad</button>
+            </div>
+
+            <div class="col-md-6">
+              <input type="input" id="input-prestaciones" class="form-control" disabled/> <!--id input de las prestaciones-->
+              <label class="form-label" for="input-prestaciones">Prestaciones</label>
+            </div>
+            <div class="col-md-2"> <!--Boton calculo prestaciones-->
+              <button id="btn-prestaciones" type="button" class="btn btn-dark">Calcular prestaciones</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
       <script src="bootstrap-5.3.0-alpha3-dist/js/Empleado.js"></script>
 <main/>

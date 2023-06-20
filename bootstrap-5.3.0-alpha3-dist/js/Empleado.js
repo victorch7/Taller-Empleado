@@ -78,7 +78,7 @@ class Empleado {
             edadEmpleado--;
         }
     
-        return edadEmpleado;
+        return edadEmpleado + " años";
 
     }
 
