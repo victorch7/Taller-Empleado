@@ -78,7 +78,7 @@ class Empleado {
             edadEmpleado--;
         }
     
-        return edadEmpleado;
+        return  edadEmpleado;
 
   }
 
@@ -135,11 +135,11 @@ function modificar() {
 }
 
 function calcularBotonEdad() {  
-  document.getElementById('input-edad').value = empleado.calcularEdad();
+  document.getElementById('input-edad').value = "Tiene " + empleado.calcularEdad() + " años";
 }
 
 function calcularBotonAntiguedad() {
-  document.getElementById('input-antiguedad').value = empleado.calcularAntiguedad();
+  document.getElementById('input-antiguedad').value = "Tiene " + empleado.calcularAntiguedad() + " años de antigüedad";
 }
 
 function calcularBotonPrestaciones() {
@@ -147,7 +147,7 @@ function calcularBotonPrestaciones() {
   let prestaciones = 0;
 
   prestaciones = (empleado.calcularAntiguedad() * empleado.getSalario())/(12);
-  document.getElementById('input-prestaciones').value = prestaciones.toFixed(3);
+  document.getElementById('input-prestaciones').value = "$ " + prestaciones.toFixed(3);
 
 }
 
