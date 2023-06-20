@@ -59,26 +59,26 @@ class Empleado {
 
   calcularEdad() {
 
-        const fechaActual = new Date();
-        const fechaNacimiento = new Date(this.fechaNacimiento);
-    
-        const anioActual = fechaActual.getFullYear();
-        const mesActual = fechaActual.getMonth() + 1;  // Se suma 1 porque los meses en JavaScript comienzan desde 0.
-        const diaActual = fechaActual.getDate();
-    
-        const anioNacimiento = fechaNacimiento.getFullYear();
-        const mesNacimiento = fechaNacimiento.getMonth() + 1;  // Se suma 1 porque los meses en JavaScript comienzan desde 0.
-        const diaNacimiento = fechaNacimiento.getDate();
-    
-        let edadEmpleado = anioActual - anioNacimiento;
-    
-        if (mesNacimiento > mesActual) {
-            edadEmpleado--;
-        } else if (mesNacimiento === mesActual && diaNacimiento > diaActual) {
-            edadEmpleado--;
-        }
-    
-        return  edadEmpleado;
+    const fechaActual = new Date();
+    const fechaNacimiento = new Date(this.fechaNacimiento);
+
+    const anioActual = fechaActual.getFullYear();
+    const mesActual = fechaActual.getMonth() + 1;  // Se suma 1 porque los meses en JavaScript comienzan desde 0.
+    const diaActual = fechaActual.getDate();
+
+    const anioNacimiento = fechaNacimiento.getFullYear();
+    const mesNacimiento = fechaNacimiento.getMonth() + 1;  // Se suma 1 porque los meses en JavaScript comienzan desde 0.
+    const diaNacimiento = fechaNacimiento.getDate();
+
+    let edadEmpleado = anioActual - anioNacimiento;
+
+    if (mesNacimiento > mesActual) {
+      edadEmpleado--;
+    } else if (mesNacimiento === mesActual && diaNacimiento > diaActual) {
+      edadEmpleado--;
+    }
+
+    return edadEmpleado;
 
   }
 
@@ -117,13 +117,35 @@ let empleado = new Empleado();
 
 function modificar() {
 
-  empleado.setNombres(document.getElementById('input-nombres').value);
-  empleado.setApellidos(document.getElementById('input-apellidos').value);
-  empleado.setSexo(document.querySelector('input[name="radio-sexo"]:checked').value);
-  empleado.setFechaNacimiento(document.getElementById('fecha-nacimiento').value);
-  empleado.setFechaIngreso(document.getElementById('fecha-ingreso').value);
-  empleado.setSalario(document.getElementById('salario').value);
+  if (
+    document.getElementById('input-nombres').value != "" &&
+    document.getElementById('input-apellidos').value != "" &&
+    document.querySelector('input[name="radio-sexo"]:checked').value != "" &&
+    document.getElementById('fecha-nacimiento').value != "" &&
+    document.getElementById('fecha-ingreso').value != "" &&
+    document.getElementById('salario').value != "") {
 
+
+    empleado.setNombres(document.getElementById('input-nombres').value);
+    empleado.setApellidos(document.getElementById('input-apellidos').value);
+    empleado.setSexo(document.querySelector('input[name="radio-sexo"]:checked').value);
+    empleado.setFechaNacimiento(document.getElementById('fecha-nacimiento').value);
+    empleado.setFechaIngreso(document.getElementById('fecha-ingreso').value);
+    empleado.setSalario(document.getElementById('salario').value);
+
+    alert(
+      "Empleado\n\n" +
+      "Nombres: \t" + empleado.getNombres() + "\n" +
+      "Apellidos: \t" + empleado.getApellidos() + "\n" +
+      "Sexo: \t" + empleado.getSexo() + "\n" +
+      "Fecha de nacimiento: \t" + empleado.getFechaNacimiento() + "\n" +
+      "Fecha de ingreso: \t" + empleado.getFechaIngreso() + "\n" +
+      "Salario: \t" + "$" + empleado.getSalario() + "\n"
+    );
+
+  } else {
+    alert("Campos incompletos");
+  }
 
   console.log(empleado.getNombres());
   console.log(empleado.getApellidos());
@@ -134,7 +156,7 @@ function modificar() {
 
 }
 
-function calcularBotonEdad() {  
+function calcularBotonEdad() {
   document.getElementById('input-edad').value = "Tiene " + empleado.calcularEdad() + " años";
 }
 
@@ -146,7 +168,7 @@ function calcularBotonPrestaciones() {
 
   let prestaciones = 0;
 
-  prestaciones = (empleado.calcularAntiguedad() * empleado.getSalario())/(12);
+  prestaciones = (empleado.calcularAntiguedad() * empleado.getSalario()) / (12);
   document.getElementById('input-prestaciones').value = "$ " + prestaciones.toFixed(3);
 
 }
