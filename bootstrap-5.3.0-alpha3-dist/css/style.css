@@ -44,6 +44,17 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     width: 960px;
 }
 
+.contenedor-form2{ /*Contenedor del formulario de información academica*/
+    background: rgb(142, 154, 175);
+    border-radius: 10px;
+    padding: 10px 70px;
+    box-shadow: 0 0 5px 0 rgb(163, 217, 255);
+    width: 40%;
+    margin: 80px 0;
+    display: grid;
+    place-items: center;
+}
+
 .contenedor-foto{ /*Contenedor de la foto*/
     display: flex;
     align-items: center;
