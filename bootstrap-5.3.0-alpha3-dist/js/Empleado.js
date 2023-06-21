@@ -117,13 +117,35 @@ let empleado = new Empleado();
 
 function modificar() {
 
-  empleado.setNombres(document.getElementById('input-nombres').value);
-  empleado.setApellidos(document.getElementById('input-apellidos').value);
-  empleado.setSexo(document.querySelector('input[name="radio-sexo"]:checked').value);
-  empleado.setFechaNacimiento(document.getElementById('fecha-nacimiento').value);
-  empleado.setFechaIngreso(document.getElementById('fecha-ingreso').value);
-  empleado.setSalario(document.getElementById('salario').value);
+  if (
+    document.getElementById('input-nombres').value != "" &&
+    document.getElementById('input-apellidos').value != "" &&
+    document.querySelector('input[name="radio-sexo"]:checked').value != "" &&
+    document.getElementById('fecha-nacimiento').value != "" &&
+    document.getElementById('fecha-ingreso').value != "" &&
+    document.getElementById('salario').value != "") {
 
+
+    empleado.setNombres(document.getElementById('input-nombres').value);
+    empleado.setApellidos(document.getElementById('input-apellidos').value);
+    empleado.setSexo(document.querySelector('input[name="radio-sexo"]:checked').value);
+    empleado.setFechaNacimiento(document.getElementById('fecha-nacimiento').value);
+    empleado.setFechaIngreso(document.getElementById('fecha-ingreso').value);
+    empleado.setSalario(document.getElementById('salario').value);
+
+    alert(
+      "Empleado\n\n" +
+      "Nombres: \t" + empleado.getNombres() + "\n" +
+      "Apellidos: \t" + empleado.getApellidos() + "\n" +
+      "Sexo: \t" + empleado.getSexo() + "\n" +
+      "Fecha de nacimiento: \t" + empleado.getFechaNacimiento() + "\n" +
+      "Fecha de ingreso: \t" + empleado.getFechaIngreso() + "\n" +
+      "Salario: \t" + "$" + empleado.getSalario() + "\n"
+    );
+
+  } else {
+    alert("Campos incompletos");
+  }
 
   console.log(empleado.getNombres());
   console.log(empleado.getApellidos());
