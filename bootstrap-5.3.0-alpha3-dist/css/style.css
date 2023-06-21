@@ -38,10 +38,22 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     background: rgb(142, 154, 175);
     border-radius: 10px;
     padding: 10px 70px;
+    box-shadow: 0 0 5px 0 rgb(163, 217, 255);
     display: flex;
     align-items: center;
     justify-content: left;
     width: 960px;
+}
+
+.contenedor-form2{ /*Contenedor del formulario de información academica*/
+    background: rgb(142, 154, 175);
+    border-radius: 10px;
+    padding: 10px 70px;
+    box-shadow: 0 0 5px 0 rgb(163, 217, 255);
+    width: 40%;
+    margin: 80px 0;
+    display: grid;
+    place-items: center;
 }
 
 .contenedor-foto{ /*Contenedor de la foto*/
@@ -68,10 +80,11 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     padding-right: 0;
     margin-top: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgb(163, 217, 255);
     width: 960px;
 }
 
-.form-outline, .form-control{ /*Tamaño de los inputs*/
+.form-outline, .form-control, select{ /*Tamaño de los inputs*/
     width: 350px;
     padding-right: 0;
 }
@@ -81,4 +94,5 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     height: 38px;
     background: rgb(42, 44, 65);
     text-align: center;
+    box-shadow: 0 0 8px 0 rgb(77, 180, 245);
 }
