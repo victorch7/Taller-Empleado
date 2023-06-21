@@ -44,11 +44,11 @@
             <h2 class="text-center mb-3">Datos Personales</h2>
                 <div class="col-md-7">
                       <div class="form-outline mb-2">
-                        <input type="text" pattern="[A-Za-z]+" id="input-nombres" class="form-control "/><!--Input para nombres-->
+                        <input type="text" oninput="validateInput()" title="Ingrese solo letras" id="input-nombres" class="form-control" required /><!--Input para nombres-->
                         <label class="form-label" for="input-nombres">Nombres</label>
                       </div>
                       <div class="form-outline mb-2">
-                        <input type="text" id="input-apellidos" class="form-control" required/><!--Input para apellidos-->
+                        <input type="text" oninput="validateInput()" title="Ingrese solo letras" id="input-apellidos" class="form-control" required/><!--Input para apellidos-->
                         <label class="form-label" for="input-apellidos">Apellidos</label>
                       </div>
 

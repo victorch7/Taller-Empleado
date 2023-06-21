@@ -134,6 +134,36 @@ function modificar() {
 
 }
 
+//Función para validar que los campos de tipo text no tengan numeros
+  function validateInput() {
+    var input = document.getElementById("input-nombres").value;
+    var input2 = document.getElementById("input-apellidos").value;
+    var pattern = /^[a-zA-Z]+$/;
+
+    if (!pattern.test(input) && !pattern.test(input2)) {
+      // Si no se ingresaron solo letras, muestra un mensaje de error o toma alguna otra acción
+      alert("El campo solo debe contener letras");
+      // También puedes limpiar el campo de entrada si lo deseas
+      document.getElementById("input-nombres").value = "";
+      document.getElementById("input-apellidos").value = "";
+    }
+
+  }
+
+  //Función para validar que los campos de institucion no tengan numeros
+  function validarIntitucion() {
+    var input3 = document.getElementById("institucion").value;
+    var pattern = /^[a-zA-Z]+$/;
+
+    if (!pattern.test(input3)) {
+      // Si no se ingresaron solo letras, muestra un mensaje de error o toma alguna otra acción
+      alert("El campo solo debe contener letras");
+      // También puedes limpiar el campo de entrada si lo deseas
+      document.getElementById("institucion").value = "";
+    }
+
+  }
+
 function calcularBotonEdad() {  
   document.getElementById('input-edad').value = "Tiene " + empleado.calcularEdad() + " años";
 }
