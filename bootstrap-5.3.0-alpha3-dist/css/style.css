@@ -96,3 +96,10 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     text-align: center;
     box-shadow: 0 0 8px 0 rgb(77, 180, 245);
 }
+
+/*Estilo para el sweet alert*/
+.format-pre pre {
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+  }

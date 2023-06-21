@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
-    <title>Opción 1</title>
-    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
+  <title>Opción 1</title>
+  <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Roboto+Condensed&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
 </head>
 
-<body>  
+<body>
   <header class="navegacion">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
@@ -32,63 +35,67 @@
         </nav>
       </div>
     </nav>
-</header>
+  </header>
 
-<main>
-  <div class="container">
-    <div class="contenedor-form2">
-      <h2 class="p-3">Información Acádemica</h2>
-          <form> <!--Formulario de formación acádemica-->
-            <div class="form-outline mb-4">
-              <div class="form-outline">
-                <div class="form-group">
-                  <select class="form-control" id="nivel" name="nivel">
-                    <option value="">Seleccione una opción</option>
-                    <option value="Educación Primaria">Educación Primaria</option>
-                    <option value="Educación Secundaria">Educación Secundaria</option>
-                    <option value="Educación Técnica o Profesional">Educación Técnica o Profesional</option>
-                    <option value="Educación Superior">Educación Superior</option>
-                  </select>
-                  <label for="titulo">Nivel de formación académica alcanzado</label>
-                </div>            
-              </div>
-            </div>
-          
-            <div class="form-outline mb-3"> <!--Id campo de nombre de institucion-->
-              <input type="text" oninput="validarIntitucion()" title="Ingrese solo letras" id="institucion" class="form-control" placeholder="Nombre de la institución" required/><!--Input para nombres-->
-              <label class="form-label" for="institucion">Nombre de la institución donde termino sus estudios</label>
-            </div>
-
-            <div class="form-outline mb-4">
+  <main>
+    <div class="container">
+      <div class="contenedor-form2">
+        <h2 class="p-3">Información Acádemica</h2>
+        <form> <!--Formulario de formación acádemica-->
+          <div class="form-outline mb-4">
+            <div class="form-outline">
               <div class="form-group">
-                <select class="form-control" id="titulo" name="titulo">
-                  <option value="">Seleccione una opción</option>
-                  <option value="Licenciatura">Licenciatura</option>
-                  <option value="Maestría">Maestría</option>
-                  <option value="Doctorado">Doctorado</option>
-                  <option value="Título Profesional">Título Profesional</option>
-                  <option value="Certificación Técnica">Certificación Técnica</option>
-                  <option value="Diplomas de postgrado">Diplomas de postgrado</option>
+                <select class="form-control" id="nivelacademico" name="nivelacademico">
+                  <option disabled selected value="">Seleccione una opción</option>
+                  <option value="Educación Primaria">Educación Primaria</option>
+                  <option value="Educación Secundaria">Educación Secundaria</option>
+                  <option value="Educación Técnica o Profesional">Educación Técnica o Profesional</option>
+                  <option value="Educación Superior">Educación Superior</option>
                 </select>
-                <label for="titulo">Título académico obtenido</label>
-              </div>            
-            </div>
-          
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                <button type="button" class="btn btn-dark btn-block">Guardar</button>
+                <label for="nivel-academico">Nivel de formación académica alcanzado</label>
               </div>
             </div>
-      </form>
-        </div>
+          </div>
+
+          <div class="form-outline mb-3"> <!--Id campo de nombre de institucion-->
+            <input type="text" oninput="validarIntitucion()" title="Ingrese solo letras" id="institucion"
+              class="form-control" placeholder="Nombre de la institución" required /><!--Input para nombres-->
+            <label class="form-label" for="institucion">Nombre de la institución donde termino sus estudios</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <div class="form-group">
+              <select class="form-control" id="titulo" name="titulo">
+                <option disabled selected value="">Seleccione una opción</option>
+                <option value="Licenciatura">Licenciatura</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+                <option value="Título Profesional">Título Profesional</option>
+                <option value="Certificación Técnica">Certificación Técnica</option>
+                <option value="Diplomas de postgrado">Diplomas de postgrado</option>
+              </select>
+              <label for="titulo">Título académico obtenido</label>
+            </div>
+          </div>
+
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              <button type="button" class="btn btn-dark btn-block"
+                onclick="guardarInformacionAcademica()">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
 
     </div>
-  </div>
+    </div>
 
-</main>
+  </main>
 </body>
 
 <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
 <script src="bootstrap-5.3.0-alpha3-dist/js/Empleado.js"></script>
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+
 </html>
