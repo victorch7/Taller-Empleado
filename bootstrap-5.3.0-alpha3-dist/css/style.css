@@ -56,6 +56,18 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     place-items: center;
 }
 
+.contenedor-form3{ /*Contenedor del formulario de acceso*/
+    background: rgb(142, 154, 175);
+    border-radius: 10px;
+    padding: 5px 70px;
+    box-shadow: 0 0 5px 0 rgb(163, 217, 255);
+    width: 40%;
+    margin: 1px 0;
+    display: grid;
+    place-items: center;
+}
+
+
 .contenedor-foto{ /*Contenedor de la foto*/
     display: flex;
     align-items: center;
@@ -95,6 +107,14 @@ h1{ /*Diseño titulo de la barra de navegacion*/
     background: rgb(42, 44, 65);
     text-align: center;
     box-shadow: 0 0 8px 0 rgb(77, 180, 245);
+}
+
+.btn-dark2{ /*Estilo del boton que genera clave y correo*/
+    width: 200px;
+    background: rgb(42, 44, 65);
+    text-align: center;
+    box-shadow: 0 0 8px 0 rgb(77, 180, 245);
+    color: rgb(166, 172, 181);
 }
 
 /*Estilo para el sweet alert*/

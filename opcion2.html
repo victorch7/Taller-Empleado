@@ -34,7 +34,74 @@
       </div>
     </nav>
 </header>
-    <h2>hola mundo</h2>
+<main>
+  <div class="container">
+    <div class="contenedor-form3">
+      <h2 class="p-2">Generación de Credenciales</h2>
+      <form> <!--Formulario de asistencia-->
+        <div class="form-outline mb-3">
+          <div class="form-outline">
+            <div class="form-group">
+              <select class="form-control" id="tipousuario" name="tipousuario"> <!--id select tipo usuario-->
+                <option disabled selected value="">Seleccione una opción</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Vendedor">Vendedor</option>
+                <option value="Auxiliar">Auxiliar</option>
+              </select>
+              <label for="tipousuario">Tipo de usuario</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-outline mb-2"> <!--Id campo de nombre de usuario-->
+          <input type="text" id="nombre-usuario"
+            class="form-control" placeholder="Ingrese un nombre de usuario" required /><!--Input para nombre usuario-->
+          <label class="form-label" for="nombre-usuario">Nombre de usuario</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <div class="form-group">
+            <select class="form-control" id="area" name="area"> <!--id select tipo usuario-->
+              <option disabled selected value="">Seleccione una opción</option>
+              <option value="Gerencia">Gerencia</option>
+              <option value="Administración">Administración</option>
+              <option value="Vigilancia">Vigilancia</option>
+              <option value="Limpieza">Limpieza</option>
+            </select>
+            <label for="area">Area de trabajo</label>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <input type="input" id="input-correo" class="form-control" disabled/> <!--id input del correo-->
+          <label class="form-label" for="input-correo">Generación de correo</label> <br>
+        </div>
+
+        <div class="col-md-6">
+          <input type="input" id="input-clave" class="form-control" disabled/> <!--id input de la clave-->
+          <label class="form-label" for="input-clave">Generación de clave</label> <br>
+        </div>
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-3 pt-2">
+            <div class="col d-flex justify-content-center">
+              <button type="button" class="btn btn-dark2 btn-block"
+                onclick="">Generar datos de acceso</button>
+            </div>
+          </div>   
+      </form>
+    </div>
+  </div>
+
+  <form class="p-4">
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <button type="button" class="btn btn-dark btn-block"
+          onclick="">Guardar</button>
+      </div>
+    </div>
+</form>
+</main>
 </body>
 
 <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
