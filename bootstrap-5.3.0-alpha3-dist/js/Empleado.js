@@ -8,6 +8,13 @@ class Empleado {
     this.fechaIngreso = "";
     this.salario = 0;
     this.informacionAcademica = [];
+
+    this.tipoUsuario = "";
+    this.nombreUsuario = "";
+    this.areaTrabajo = "";
+    this.correo = "";
+    this.clave = "";
+
   }
 
   getNombres() {
@@ -70,7 +77,47 @@ class Empleado {
     this.informacionAcademica.push(informacionAcademica);
   }
 
-  calcularEdad() {
+  getTipoUsuario() {
+    return this.tipoUsuario;
+  }
+
+  setTipoUsuario(tipoUsuario) {
+    this.tipoUsuario = tipoUsuario;
+  }
+
+  getNombreUsuario() {
+    return this.nombreUsuario;
+  }
+
+  setNombreUsuario(nombreUsuario) {
+    this.nombreUsuario = nombreUsuario;
+  }
+
+  getAreaTrabajo() {
+    return this.areaTrabajo;
+  }
+
+  setAreaTrabajo(areaTrabajo) {
+    this.areaTrabajo = areaTrabajo;
+  }
+
+  getCorreo() {
+    return this.correo;
+  }
+
+  setCorreo(correo) {
+    this.correo = correo;
+  }
+
+  getClave() {
+    return this.clave;
+  }
+
+  setClave(clave) {
+    this.clave = clave;
+  }
+
+  calcularEdad() {//Vista Inicio
 
     const fechaActual = new Date();
     const fechaNacimiento = new Date(this.fechaNacimiento);
@@ -125,11 +172,17 @@ class Empleado {
       'Salario:             ' + '$' + empleado.getSalario() + '\n';
   }
 
+  toStringCredenciales(){
+    return 'Tipo de usuario:      ' + empleado.getTipoUsuario() + '\n' +
+           'Nombre de usuario:    ' + empleado.getNombreUsuario() + '\n' +
+           'Área de trabajo:      ' + empleado.getAreaTrabajo() + '\n' +
+           'Generación de correo: ' + empleado.getCorreo() + '\n' +
+           'Clave:                ' + empleado.getClave()
+  }
+
 }
 
-
 //Vista Inicio
-
 
 let empleado = new Empleado(); //Clase empleado
 
@@ -253,7 +306,8 @@ function calcularBotonPrestaciones() {
   }
 }
 
-//Información academica
+
+// Opción 1 Información academica
 
 function guardarInformacionAcademica() {
   if (
@@ -282,9 +336,83 @@ function guardarInformacionAcademica() {
 
   } else {
     Swal.fire({
-      text: 'No se ha ingresado la información acádemicos',
+      text: 'No se ha ingresado la información acádemica',
       icon: 'error',
       confirmButtonText: 'Aceptar'
     });
   }
 }
+
+
+// Opción 2 Generación de credenciales
+
+function generarDatosCredenciales() {
+  
+  if (
+    document.getElementById('tipousuario').value != '' &&
+    document.getElementById('nombre-usuario').value != '' &&
+    document.getElementById('area').value != '' ) {
+
+    empleado.setTipoUsuario(document.getElementById('tipousuario').value);
+    empleado.setNombreUsuario(document.getElementById('nombre-usuario').value);
+    empleado.setAreaTrabajo(document.getElementById('area').value);
+    
+    generarCorreoClave();
+
+    Swal.fire({
+      title: 'Credenciales generadas satisfactoriamente',
+      html: '<pre>' +  empleado.toStringCredenciales() + '</pre>',
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      customClass: {
+        popup: 'format-pre'
+      }
+    });   
+
+  } else {
+    Swal.fire({
+      text: 'Faltan campos por completar',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
+}
+
+
+function generarCorreoClave() {
+
+  if (empleado.getNombreUsuario()) {
+    let correoPersonalizado = empleado.getNombreUsuario().toLowerCase().replace(/\s+/g, '') + '@dominio.com';
+    empleado.setCorreo(correoPersonalizado);
+    empleado.setClave(generarClaveAleatoria(8));
+    
+    document.getElementById('input-correo').value = empleado.getCorreo();
+    document.getElementById('input-clave').value = empleado.getClave();
+    
+  } else {
+    Swal.fire({
+      text: 'Ingrese un nombre de usuario',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+}
+
+function generarClaveAleatoria(longitud) {
+  let caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let clave = '';
+
+  for (let i = 0; i < longitud; i++) {
+    clave += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  }
+
+  return clave;
+}
+
+
+
+
+
+
+
