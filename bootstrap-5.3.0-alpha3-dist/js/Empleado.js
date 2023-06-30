@@ -117,6 +117,7 @@ class Empleado {
     this.clave = clave;
   }
 
+  //Calculando la edad del empleado basandose en la fecha actual
   calcularEdad() {//Vista Inicio
 
     const fechaActual = new Date();
@@ -140,6 +141,7 @@ class Empleado {
 
   }
 
+  //Calculando la antiguedad del empleado basandose en la fecha actual
   calcularAntiguedad() {
 
     const fechaActual = new Date();
@@ -186,11 +188,9 @@ class Empleado {
 
 let empleado = new Empleado(); //Clase empleado
 
+//En la función modificar se guarda la información del empleado
 function modificar() {
-
   
-
-
   if (
     document.getElementById('input-nombres').value != "" &&
     document.getElementById('input-apellidos').value != "" &&
