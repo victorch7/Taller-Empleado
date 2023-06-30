@@ -188,6 +188,9 @@ let empleado = new Empleado(); //Clase empleado
 
 function modificar() {
 
+  
+
+
   if (
     document.getElementById('input-nombres').value != "" &&
     document.getElementById('input-apellidos').value != "" &&
@@ -196,22 +199,38 @@ function modificar() {
     document.getElementById('fecha-ingreso').value != "" &&
     document.getElementById('salario').value != "") {
 
-    empleado.setNombres(document.getElementById('input-nombres').value);
-    empleado.setApellidos(document.getElementById('input-apellidos').value);
-    empleado.setSexo(document.querySelector('input[name="radio-sexo"]:checked').value);
-    empleado.setFechaNacimiento(document.getElementById('fecha-nacimiento').value);
-    empleado.setFechaIngreso(document.getElementById('fecha-ingreso').value);
-    empleado.setSalario(document.getElementById('salario').value);
+      let fechaUsuario = new Date(document.getElementById('fecha-nacimiento').value);
+      let fechaActual = new Date();
+      let fechaIngreso = new Date(document.getElementById('fecha-ingreso').value);
 
-    Swal.fire({
-      title: 'Empleado registrado',
-      html: '<pre>' + empleado.toString() + '</pre>',
-      icon: 'success',
-      confirmButtonText: 'Aceptar',
-      customClass: {
-        popup: 'format-pre'
-      }
-    });
+      if (fechaUsuario >= fechaActual || fechaIngreso > fechaActual ) {
+
+        Swal.fire({
+          text: 'El ingreso de fechas no es valida, tenga en cuenta la fecha actual',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+        
+      } else {       
+
+        empleado.setNombres(document.getElementById('input-nombres').value);
+        empleado.setApellidos(document.getElementById('input-apellidos').value);
+        empleado.setSexo(document.querySelector('input[name="radio-sexo"]:checked').value);
+        empleado.setFechaNacimiento(document.getElementById('fecha-nacimiento').value);
+        empleado.setFechaIngreso(document.getElementById('fecha-ingreso').value);
+        empleado.setSalario(document.getElementById('salario').value);
+
+        Swal.fire({
+          title: 'Empleado registrado',
+          html: '<pre>' + empleado.toString() + '</pre>',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+          customClass: {
+            popup: 'format-pre'
+          }
+        });
+        
+      }    
 
   } else {
     Swal.fire({
